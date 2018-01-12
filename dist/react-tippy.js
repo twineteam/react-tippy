@@ -397,6 +397,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var defaultProps = {
+  tag: 'div',
   html: null,
   position: 'top',
   animation: 'shift',
@@ -660,8 +661,9 @@ var Tooltip = function (_Component) {
     value: function render() {
       var _this3 = this;
 
+      var Tag = this.props.tag;
       return _react2.default.createElement(
-        'div',
+        Tag,
         {
           ref: function ref(tooltip) {
             _this3.tooltipDOM = tooltip;
