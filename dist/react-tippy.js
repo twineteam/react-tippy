@@ -664,7 +664,7 @@ var Tooltip = function (_Component) {
       var Tag = this.props.tag;
       return _react2.default.createElement(
         Tag,
-        {
+        _extends({
           ref: function ref(tooltip) {
             _this3.tooltipDOM = tooltip;
           },
@@ -674,7 +674,7 @@ var Tooltip = function (_Component) {
           style: _extends({
             display: 'inline'
           }, this.props.style)
-        },
+        }, this.props),
         this.props.children
       );
     }
