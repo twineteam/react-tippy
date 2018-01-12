@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import tippy from './js/tippy';
 
 const defaultProps = {
+	tag: 'div',
   html: null,
   position: 'top',
   animation: 'shift',
@@ -243,8 +244,9 @@ class Tooltip extends Component {
   }
 
   render() {
+		const Tag = this.props.tag
     return (
-      <div
+      <Tag
         ref={(tooltip) => { this.tooltipDOM = tooltip; }}
         title={this.props.title}
         className={this.props.className}
@@ -255,7 +257,7 @@ class Tooltip extends Component {
         }}
       >
         {this.props.children}
-      </div>
+      </Tag>
     );
   }
 }
