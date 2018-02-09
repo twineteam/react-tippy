@@ -255,7 +255,6 @@ class Tooltip extends Component {
           display: 'inline',
           ...this.props.style
         }}
-				{...this.props}
       >
         {this.props.children}
       </Tag>
