@@ -265,6 +265,7 @@ class Tippy {
     const data = find(this.store, data => data.popper === popper)
     const { tooltip, circle, content } = getInnerElements(popper)
 
+		if( !data ) return
     // custom react
     // Prevent hide if open
     if (data.settings.disabled === false && data.settings.open) {

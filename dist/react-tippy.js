@@ -2312,10 +2312,9 @@ var Tippy = function () {
           circle = _getInnerElements2.circle,
           content = _getInnerElements2.content;
 
+      if (!data) return;
       // custom react
       // Prevent hide if open
-
-
       if (data.settings.disabled === false && data.settings.open) {
         return;
       }
