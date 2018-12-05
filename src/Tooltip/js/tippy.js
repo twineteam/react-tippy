@@ -112,6 +112,8 @@ class Tippy {
 
   updateSettings(popper, name, value) {
     const data = find(this.store, data => data.popper === popper)
+    if (!data) return;
+
     const newSettings = {
       ...data.settings,
       [name]: value,
@@ -127,6 +129,7 @@ class Tippy {
   updateForReact(popper, updatedContent) {
     const tooltipContent = popper.querySelector(Selectors.CONTENT)
     const data = find(this.store, data => data.popper === popper)
+    if (!data) return;
 
     const {
       useContext,
@@ -155,6 +158,8 @@ class Tippy {
     if (this.state.destroyed) return
 
     const data = find(this.store, data => data.popper === popper)
+    if (!data) return;
+
     const { tooltip, circle, content } = getInnerElements(popper)
 
     if (!document.body.contains(data.el)) {
@@ -165,7 +170,7 @@ class Tippy {
     this.callbacks.show.call(popper)
 
     // Custom react
-    if (data && data.settings && data.settings.open === false) {
+    if (data.settings && data.settings.open === false) {
       return;
     }
 
@@ -263,6 +268,8 @@ class Tippy {
     this.callbacks.hide.call(popper)
 
     const data = find(this.store, data => data.popper === popper)
+    if (!data) return;
+
     const { tooltip, circle, content } = getInnerElements(popper)
 
 		if( !data ) return
@@ -348,6 +355,8 @@ class Tippy {
     if (this.state.destroyed) return
 
     const data = find(this.store, data => data.popper === popper)
+    if (!data) return;
+
     const { content } = getInnerElements(popper)
     const { el, settings: { html } } = data
 
@@ -372,6 +381,7 @@ class Tippy {
     if (this.state.destroyed) return
 
     const data = find(this.store, data => data.popper === popper)
+    if (!data) return;
 
     const {
       el,
